@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'protein',
     'ligand',
     'molecule',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% block content %}
+<form method="POST" action="{% url 'add_boostrap' %}"" class="form">
+{% csrf_token %}
+{% bootstrap_form f %}
+
+  {% buttons %}
+    <button type="submit" class="btn btn-primary">
+      {% bootstrap_icon "star" %} Submit
+    </button>
+  {% endbuttons %}
+
+</form>
+{% endblock %}
