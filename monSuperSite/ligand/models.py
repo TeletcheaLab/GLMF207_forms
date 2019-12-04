@@ -11,8 +11,8 @@ class Ligand(models.Model):
     pubchem_id=models.PositiveIntegerField(blank=True)
     common_name=models.CharField(max_length=255)
     chemical_name=models.CharField(max_length=255)
-    p=models.ForeignKey(Protein)
+    p=models.ForeignKey(Protein, on_delete=models.SET_NULL, null=True)
     
-    def __unicode__(self):
-        return u'%s' % self.common_name
+    def __str__(self):
+        return ('{}'.format(self.common_name))
 
